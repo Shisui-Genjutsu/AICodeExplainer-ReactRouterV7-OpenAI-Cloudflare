@@ -1,5 +1,9 @@
 {
 	"name": "ai-code-explainer",
+	"version": "1.0.0",
+	"description": "AI-powered code explanation tool with ChatGPT-like interface",
+	"author": "Bhaskar Guthula",
+	"license": "MIT",
 	"private": true,
 	"type": "module",
 	"scripts": {
