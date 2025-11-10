@@ -6,6 +6,10 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "ai-code-explainer",
 	"compatibility_date": "2025-04-04",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
 	"main": "./workers/app.ts",
 	"vars": {
 		"FRONTEND_URL": "https://ai-code-explainer.bhaskarg.workers.dev"

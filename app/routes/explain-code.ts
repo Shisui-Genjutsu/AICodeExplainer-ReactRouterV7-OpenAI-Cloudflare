@@ -1,4 +1,5 @@
 import type { Route } from "../+types/root";
+import type { AICodeExplainerResponse } from "../../global.d";
 
 export const loader = async ({ request }: Route.LoaderArgs) => {
     return Response.json({ message: "OM" });
@@ -31,11 +32,12 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
                 summary: "auto" //"auto" | "concise" | "detailed";
             }
         }
-        );
+        ) as AICodeExplainerResponse;
 
         return Response.json({
-            explanation: response,
-            language: language
+            explanation: response?.output?.[1]?.content?.[0]?.text || "",
+            language: language,
+            usage: response?.usage || {}
         });
     } catch (error) {
         console.error(error);
